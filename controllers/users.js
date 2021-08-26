@@ -52,3 +52,24 @@ exports.countUsersDepartment = asyncHandler(async function (
   let result = await User.countDocuments({ department });
   return result;
 });
+
+// Update user info
+
+exports.updateUser = asyncHandler(async function (_, { email, data }, __, ___) {
+  let user = await User.findOneAndUpdate({ email }, data, {
+    new: true,
+    runValidators: true,
+  }).exec();
+  if (!user) throw UserInputError("Could not find that email: " + email);
+
+  return user;
+});
+
+// Delete a user
+
+exports.deleteUser = asyncHandler(async function (_, { email }, __, ___) {
+  let user = await User.findOne({ email }).lean().exec();
+  if (!user) throw UserInputError(`Could find the user: ${email}`);
+  await User.deleteOne({ email }).exec();
+  return true;
+});

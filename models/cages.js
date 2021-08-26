@@ -4,6 +4,7 @@ let cageSchema = new mongoose.Schema({
   code: {
     type: Number,
     required: true,
+    unique: true,
   },
   owner: {
     type: String,

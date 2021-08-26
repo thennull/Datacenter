@@ -7,7 +7,7 @@ var serv = async function () {
     let conn = await mongoose.connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useFindAndModify: true,
+      useFindAndModify: false,
       useCreateIndex: true,
     });
     if (conn) console.log(`Mongo database connected - OK`);

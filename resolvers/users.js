@@ -4,6 +4,8 @@ const {
   createUser,
   usersDepartment,
   countUsersDepartment,
+  updateUser,
+  deleteUser,
 } = require("../controllers/users");
 
 // Final Export to Apollo server
@@ -15,10 +17,9 @@ module.exports = {
     countUsersDepartment,
   },
   Mutation: {
-    updateUser: function (_, { name }) {
-      return { name };
-    },
+    updateUser,
     createUser,
+    deleteUser,
   },
 
   User: {
