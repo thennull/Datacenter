@@ -1,6 +1,8 @@
 type Query {
   getUsers: [User]!
   getUser(email: String!): User
+  usersDepartment(department: String!): [User]!
+  countUsersDepartment(department: String!): Int
 }
 type Mutation {
   createUser(data: inputUser!): User!

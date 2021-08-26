@@ -26,3 +26,29 @@ exports.createUser = asyncHandler(async function (
   if (!user) throw new UserInputError("Could not create this user: \n" + data);
   return user;
 });
+
+// Users by department
+
+exports.usersDepartment = asyncHandler(async function (
+  root,
+  { department },
+  context,
+  info
+) {
+  let result = await User.find({ department }, "-_id fname lname email")
+    .lean()
+    .exec();
+  return result;
+});
+
+// Count users by Department
+
+exports.countUsersDepartment = asyncHandler(async function (
+  _,
+  { department },
+  __,
+  ___
+) {
+  let result = await User.countDocuments({ department });
+  return result;
+});

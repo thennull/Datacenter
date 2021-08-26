@@ -1,10 +1,18 @@
-const { getUsers, getUser, createUser } = require("../controllers/users");
+const {
+  getUsers,
+  getUser,
+  createUser,
+  usersDepartment,
+  countUsersDepartment,
+} = require("../controllers/users");
 
 // Final Export to Apollo server
 module.exports = {
   Query: {
     getUsers,
     getUser,
+    usersDepartment,
+    countUsersDepartment,
   },
   Mutation: {
     updateUser: function (_, { name }) {
