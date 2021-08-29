@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 let cageSchema = new mongoose.Schema({
   code: {
-    type: Number,
+    type: String,
     required: true,
     unique: true,
   },

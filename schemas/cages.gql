@@ -1,0 +1,25 @@
+type Cage {
+  _id: ID
+  code: String
+  owner: String
+  DCname: String
+  address: String
+  phone: String
+  createdAt: String
+}
+
+input inputCage {
+  code: String!
+  owner: String!
+  DCname: String!
+  address: String!
+  phone: String!
+}
+
+input updateCage {
+  code: String
+  owner: String
+  DCname: String
+  address: String
+  phone: String
+}

@@ -33,7 +33,7 @@ app.disable("X-powered-by");
 app.use(xssClean());
 app.use(cors());
 
-// app.use(express.json());
+app.use(express.json());
 app.use(cookies());
 app.use(hpp());
 

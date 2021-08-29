@@ -5,10 +5,16 @@ type Query {
   usersDepartment(department: String!): [User]!
   countUsersDepartment(department: String!): Int
   #Cages
+  getCage(id: ID!): Cage
+  getCages: [Cage]!
 }
 type Mutation {
   #Users
   createUser(data: inputUser!): User!
   updateUser(email: String!, data: updateUser!): User!
   deleteUser(email: String!): Boolean!
+  #Cages
+  createCage(data: inputCage!): Cage!
+  updateCage(id: ID!, data: updateCage!): Cage!
+  deleteCage(id: ID!): Boolean!
 }
