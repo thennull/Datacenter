@@ -7,6 +7,8 @@ type Query {
   #Cages
   getCage(id: ID!): Cage
   getCages: [Cage]!
+  #Rack
+  getRack(id: ID!):
 }
 type Mutation {
   #Users
@@ -17,4 +19,8 @@ type Mutation {
   createCage(data: inputCage!): Cage!
   updateCage(id: ID!, data: updateCage!): Cage!
   deleteCage(id: ID!): Boolean!
+  #Racks
+  createRack(data: inputRack!): Rack!
+  updateRack(id: ID!, data: updateRack!): Rack!
+  deleteRack(id: ID!): Boolean!
 }

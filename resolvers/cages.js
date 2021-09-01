@@ -6,6 +6,8 @@ const {
   deleteCage,
 } = require("../controllers/cages");
 
+const { getRacks } = require("../controllers/racks");
+
 // Cage Resolvers
 module.exports = {
   Query: {
@@ -16,5 +18,8 @@ module.exports = {
     createCage,
     updateCage,
     deleteCage,
+  },
+  Cage: {
+    racks: getRacks,
   },
 };

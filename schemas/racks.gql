@@ -1,0 +1,30 @@
+type rack {
+  _id: ID
+  cageId: ID
+  codigo: String
+  rackType: type
+  RackUnits: Int
+  Brand: String
+  createdAt: String
+}
+
+enum type {
+  NETWORK
+  SERVER
+}
+
+input inputRack {
+  cageId: ID!
+  codigo: String!
+  rackType: type!
+  RackUnits: Int!
+  Brand: String!
+}
+
+input updateRack {
+  cageId: ID
+  codigo: String
+  rackType: type
+  RackUnits: Int
+  Brand: String
+}

@@ -5,6 +5,7 @@ type Cage {
   DCname: String
   address: String
   phone: String
+  racks: [ID]
   createdAt: String
 }
 
