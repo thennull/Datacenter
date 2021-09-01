@@ -6,15 +6,15 @@ var rackSchema = new mongoose.Schema({
     ref: "Cage",
     required: true,
   },
-  code: {
-    type: Number,
-    required: true,
-  },
-  type: {
+  codigo: {
     type: String,
     required: true,
   },
-  units: {
+  rackType: {
+    type: String,
+    required: true,
+  },
+  rackUnits: {
     type: Number,
     required: true,
   },

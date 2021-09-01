@@ -1,9 +1,9 @@
-type rack {
+type Rack {
   _id: ID
   cageId: ID
   codigo: String
   rackType: type
-  RackUnits: Int
+  rackUnits: Int
   Brand: String
   createdAt: String
 }
@@ -17,7 +17,7 @@ input inputRack {
   cageId: ID!
   codigo: String!
   rackType: type!
-  RackUnits: Int!
+  rackUnits: Int!
   Brand: String!
 }
 
@@ -25,6 +25,6 @@ input updateRack {
   cageId: ID
   codigo: String
   rackType: type
-  RackUnits: Int
+  rackUnits: Int
   Brand: String
 }

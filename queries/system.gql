@@ -8,7 +8,8 @@ type Query {
   getCage(id: ID!): Cage
   getCages: [Cage]!
   #Rack
-  getRack(id: ID!):
+  getRack(id: ID!): Rack
+  getRacks: [Rack]!
 }
 type Mutation {
   #Users
