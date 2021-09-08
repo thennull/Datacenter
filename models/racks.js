@@ -27,4 +27,6 @@ var rackSchema = new mongoose.Schema({
   },
 });
 
+rackSchema.index({ codigo: 1, cageId: 1 }, { unique: true });
+
 module.exports = mongoose.model("Rack", rackSchema);

@@ -4,7 +4,7 @@ type Rack {
   codigo: String
   rackType: type
   rackUnits: Int
-  Brand: String
+  brand: String
   createdAt: String
 }
 
@@ -18,7 +18,7 @@ input inputRack {
   codigo: String!
   rackType: type!
   rackUnits: Int!
-  Brand: String!
+  brand: String!
 }
 
 input updateRack {
@@ -26,5 +26,5 @@ input updateRack {
   codigo: String
   rackType: type
   rackUnits: Int
-  Brand: String
+  brand: String
 }

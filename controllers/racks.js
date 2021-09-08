@@ -30,14 +30,27 @@ exports.createRack = asyncHandler(async function (
 
 exports.updateRack = asyncHandler(async function (
   root,
-  args,
+  { id, data },
   context,
   info
-) {});
+) {
+  if (!id.match(/^[a-f0-9]{24}$/))
+    throw new UserInputError("Invalid ID: " + id);
+  let rack = await Rack.findByIdAndUpdate(id, data, {
+    new: true,
+    runValidators: true,
+  })
+    .select("-__v")
+    .lean()
+    .exec();
+  if (!rack) throw new UserInputError("Could not find the rack with id: " + id);
+  return rack;
+});
 
-exports.deleteRack = asyncHandler(async function (
-  root,
-  args,
-  context,
-  info
-) {});
+exports.deleteRack = asyncHandler(async function (root, { id }, context, info) {
+  if (!id.match(/^[a-f0-9]{24}$/))
+    throw new UserInputError("Invalid ID: " + id);
+  let rack = await Rack.findByIdAndDelete(id).select("-__v").lean().exec();
+  if (!rack) throw new UserInputError("Could not find the rack with id: " + id);
+  return true;
+});

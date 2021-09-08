@@ -1,0 +1,18 @@
+type Pdu {
+  _id: ID
+  sockets: Int
+  power: String
+  rackId: ID
+}
+
+input inputPdu {
+  sockets: Int!
+  power: String!
+  rackId: ID!
+}
+
+input updatePdu {
+  sockets: Int
+  power: String
+  rackId: ID
+}
