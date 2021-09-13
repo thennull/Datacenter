@@ -10,6 +10,9 @@ type Query {
   #Rack
   getRack(id: ID!): Rack
   getRacks: [Rack]!
+  #Pdu
+  getPdu(id: ID!): Pdu
+  getPdus: [Pdu]!
 }
 type Mutation {
   #Users
@@ -24,4 +27,8 @@ type Mutation {
   createRack(data: inputRack!): Rack!
   updateRack(id: ID!, data: updateRack!): Rack!
   deleteRack(id: ID!): Boolean!
+  #Pdu
+  createPdu(data: inputPdu!): Pdu!
+  updatePdu(id: ID!, data: updatePdu!): Pdu!
+  deletePdu(id: ID!): Boolean!
 }
