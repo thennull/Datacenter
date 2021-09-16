@@ -5,7 +5,7 @@ type Cage {
   DCname: String
   address: String
   phone: String
-  racks: [ID]
+  racks: [Rack]
   createdAt: String
 }
 

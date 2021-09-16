@@ -6,7 +6,7 @@ const {
   deleteCage,
 } = require("../controllers/cages");
 
-const { getRacks } = require("../controllers/racks");
+const { getRacksByCageId } = require("../controllers/racks");
 
 // Cage Resolvers
 module.exports = {
@@ -20,6 +20,6 @@ module.exports = {
     deleteCage,
   },
   Cage: {
-    racks: getRacks,
+    racks: getRacksByCageId,
   },
 };

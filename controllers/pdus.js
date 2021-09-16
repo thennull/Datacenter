@@ -43,4 +43,8 @@ exports.updatePdu = asyncHandler(async function (
   if (!pdu) throw new UserInputError("Could not update this pdu");
   return pdu;
 });
-exports.deletePdu = asyncHandler(async function () {});
+exports.deletePdu = asyncHandler(async function (root, { id }, context, info) {
+  let pdu = await Pdu.findByIdAndDelete(id).exec;
+  if (!pdu) throw new UserInputError("Could not find this pdu: " + id);
+  return true;
+});

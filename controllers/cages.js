@@ -16,7 +16,7 @@ exports.createCage = asyncHandler(async function (
 });
 
 exports.getCages = asyncHandler(async function (root, args, context, info) {
-  let cages = await Cage.find({}).select("-__v").lean().exec();
+  let cages = await Cage.find({}, "-__v").lean().exec();
   return cages;
 });
 

@@ -54,3 +54,13 @@ exports.deleteRack = asyncHandler(async function (root, { id }, context, info) {
   if (!rack) throw new UserInputError("Could not find the rack with id: " + id);
   return true;
 });
+
+exports.getRacksByCageId = asyncHandler(async function (
+  { _id },
+  args,
+  context,
+  info
+) {
+  let racks = await Rack.find({ cageId: _id }, "-__v").lean().exec();
+  return racks;
+});
